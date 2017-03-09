@@ -150,4 +150,4 @@ In order to include Component Manager in your code, you need to merge this branc
 
 #Still need help?
 
-Open a ticket and post your problem, or contact me @trancelated
+Open a ticket and post your problem, or contact me [@trancelated](https://twitter.com/trancelated)
