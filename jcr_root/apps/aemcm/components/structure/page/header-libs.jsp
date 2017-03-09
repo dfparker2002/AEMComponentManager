@@ -1,3 +1,3 @@
-<%@include file="/apps/stw/global.jsp"%>
+<%@include file="/apps/aemcm/global.jsp"%>
 
 <cq:includeClientLib js="aemcm.componentmanager" />

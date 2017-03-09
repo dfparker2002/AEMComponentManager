@@ -1,4 +1,4 @@
-<%@include file="/apps/stw/global.jsp"%>
+<%@include file="/apps/aemcm/global.jsp"%>
 
 <script type="text/javascript">
 	AEMCM.ComponentManager.runComponents();
