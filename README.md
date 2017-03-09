@@ -26,12 +26,11 @@ A component manager is used to load all the said functions for components availa
 #How does Component Manager Work?
 
 Component Manager provides a function to load up a component into execution queue and stack all components into the queue until the execute queue is called.
-
-When the page finishes loading and all associated content for components have finished rendering the Component Queue Execution starts.
+When the page finishes loading and all associated content for components have finished rendering, the Component Queue Execution funtctjon is called snd tall the tasks are executed sequentially.
 
 #Where is Component Manager Located?
 
-omponent Manager code is located in `/etc/designs/aemcm/clientlib-componentmanager/js/componentmanager.js`
+Component Manager code is located in `/etc/designs/aemcm/clientlib-componentmanager/js/componentmanager.js`
 
 The client lib is categorized as `aemcm.componentmanager` and is not embedded anywhere.
 
