@@ -23,24 +23,24 @@ Standard JavaScript functions which are written (poorly) for components runs on 
 
 A component manager is used to load all the said functions for components available on the page in a queue and executes them one by one only when the component is present.
 
-#How does Component Manager Work?
+# How does Component Manager Work?
 
 Component Manager provides a function to load up a component into execution queue and stack all components into the queue until the execute queue is called.
 When the page finishes loading and all associated content for components have finished rendering, the Component Queue Execution funtctjon is called snd tall the tasks are executed sequentially.
 
-#Where is Component Manager Located?
+# Where is Component Manager Located?
 
 Component Manager code is located in `/etc/designs/aemcm/clientlib-componentmanager/js/componentmanager.js`
 
 The client lib is categorized as `aemcm.componentmanager` and is not embedded anywhere.
 
-#How does Component Manager run then?
+# How does Component Manager run then?
 
 Component Manager in referenced in `/apps/aemcm/components/structure/page/header-libs.jsp`using the clientlib category `<cq:includeClientLib js="aemcm.componentmanager" />`tag so the client lib is included and Component Manager gets loaded just before '`</head>`'.
 
 Component Manager's method '`AEMCM.ComponentManager.runComponents()`' is invoked in `/apps/aemcm/components/structure/page/footer-libs.jsp` Just before '`</body>`'
 
-#How do I Use Component Manager then?
+# How do I Use Component Manager then?
 
 Just include the following code in your component's JSP/HTML file and replace content as necessary:
 
@@ -131,13 +131,13 @@ Use this boilerplate code in your JS and add your functions inside it.
 
 > **REMEMBER**: replace **FUNCTION_NAME** and **METHOD_NAME** from the code above, and start writing your logic in **FUNCTION_NAME** function
 
-#HELP! I CANT SEE COMPONENT MANAGER IN MY CLIENTLIBS FOLDER!
+# HELP! I CANT SEE COMPONENT MANAGER IN MY CLIENTLIBS FOLDER!
 
 Make sure that you have merged the Component Manager code in your code. If you haven't merged your code then you won't be able to use Component Manager.
 
 In order to include Component Manager in your code, you need to merge this branch in to yours and build the project first. Here's what you need to do:
 
-#Step-by-step guide
+# Step-by-step guide
 
  1. Open your terminal and navigate to the folder where you want the
     project to be created. Usually it would be the repository
@@ -147,6 +147,6 @@ In order to include Component Manager in your code, you need to merge this branc
  2. Run the command "`git merge AEMComponentManager`" to merge the Component Manager in to your code.
  3. If you use Adobe AEM Maven Archtype, then edit your `filter.xml` to include the files and then run the command "`mvn clean install -PautoInstallPackage`" to build and push the changes onto your AEM.
 
-#Still need help?
+# Still need help?
 
 Open a ticket and post your problem, or contact me [@trancelated](https://twitter.com/trancelated)
