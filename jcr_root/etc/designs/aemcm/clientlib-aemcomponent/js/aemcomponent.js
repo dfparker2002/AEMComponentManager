@@ -1,25 +1,21 @@
-	function AEMComponent() {
+function AEMComponent() {
 
-		  var functionProps, $component, defaultProps = {
-				  functionName: "AEMComponent"
-		  };
+  var functionProps, $component, defaultProps = {
+    functionName: "AEMComponent"
+  };
 
-			var aemcomponent = function(){
+  var aemcomponent = function() {
+    // Add functionality here
+    console.log($component);
+  };
 
-				// Add functionality here
-				console.log(functionProps.propertyName);
+  var init = function(properties) {
+    functionProps = Object.assign(defaultProps, properties);
+    $component = $(document.getElementById(functionProps.componentId));
+    aemcomponent();
+  };
 
-			};
-
-		  var init = function(properties) {
-
-			  functionProps = Object.assign(defaultProps, properties);
-
-				aemcomponent();
-
-		  };
-
-		  return {
-		    init: init
-		  };
-	}
+  return {
+    init: init
+  };
+}
