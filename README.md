@@ -8,7 +8,7 @@
 > Usually a Component Manager invokes a jQuery plugin/module via its name on the component's element/root DOM node, But this Component Manager uses native JavaScript to achieve the same functionality as we're unsure about the availability of jQuery at load time.
 
 
-#Why use a Component Manager
+# Why use a Component Manager
 
 **Technical Answer**: 
 As AEM supports having multiple components on a single page, it would be a mess to manage all the components on the page via JavaScript. Theoretically, a non-AEM front end developer would write code for component in such a way that the code would be executed irrespective of the fact that the component is either present in the DOM or not. 
