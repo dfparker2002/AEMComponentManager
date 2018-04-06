@@ -19,14 +19,15 @@ On the other hand, a Component Manager is used to load up such functions into a 
 
 **Non Technical Answer**: 
 
-Standard JavaScript functions which are written (poorly) for components runs on every page and throws errors if component is absent and possibly breaks page. 
+Standard JavaScript functions which are written (poorly) for components, runs on every page and throws errors if component is absent and possibly breaks page. 
 
-A component manager is used to load all the said functions for components available on the page in a queue and executes them one by one only when the component is present.
+A component manager is used to queue up all the said functions for components available on the page and executes them when the component is present.
 
 # How does Component Manager Work?
 
-Component Manager provides a function to load up a component into execution queue and stack all components into the queue until the execute queue is called.
-When the page finishes loading and all associated content for components have finished rendering, the Component Queue Execution funtctjon is called snd tall the tasks are executed sequentially.
+Component Manager provides an API to queue up a component(s) into execution queue and stack all components into the queue and to execute the stacked queue.
+
+When the page finishes loading and all associated content for components have finished rendering, the Component Queue Executes the function so the tasks in queue are executed sequentially.
 
 # Where is Component Manager Located?
 
@@ -36,7 +37,7 @@ The client lib is categorized as `aemcm.componentmanager` and is not embedded an
 
 # How does Component Manager run then?
 
-Component Manager in referenced in `/apps/aemcm/components/structure/page/header-libs.jsp`using the clientlib category `<cq:includeClientLib js="aemcm.componentmanager" />`tag so the client lib is included and Component Manager gets loaded just before '`</head>`'.
+Component Manager should be referenced in `/apps/aemcm/components/structure/page/header-libs.jsp`using the clientlib category `<cq:includeClientLib js="aemcm.componentmanager" />`tag so the client lib is included and Component Manager gets loaded just before '`</head>`'.
 
 Component Manager's method '`AEMCM.ComponentManager.runComponents()`' is invoked in `/apps/aemcm/components/structure/page/footer-libs.jsp` Just before '`</body>`'
 
@@ -48,7 +49,9 @@ Just include the following code in your component's JSP/HTML file and replace co
         AEMCM.ComponentManager.addComponent({
             identifier: "ID_OF_COMPONENT",
             method: "METHOD_NAME",
-            properties: []
+            properties: [{
+	    	...additionalProperties
+	    }]
         });
     </script>
     
