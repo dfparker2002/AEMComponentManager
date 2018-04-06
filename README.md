@@ -104,7 +104,7 @@ Use this boilerplate code in your JS and add your functions inside it.
 		  * @description alerts a string from a property
 		  */
 		  
-		  var FUNCTION NAME = function(){
+		  var FUNCTION_NAME = function(){
 		  
 			/*
 				  WRITE YOUR CODE HERE
